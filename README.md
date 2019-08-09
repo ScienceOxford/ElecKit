@@ -1,2 +1,3 @@
-# elec-kit
+# ElecKit
 Example code &amp; wiring
+Coming soon!
