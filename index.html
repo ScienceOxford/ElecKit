@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Micro:Bit Electronics Kit</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Condensed:100,300,400,500,700,900" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+    <a href="https://scienceoxford.com" target="_blank"><img src="images\so_logo.png" alt="Science Oxford Logo" width="400px" height="auto"></a>
+    <h1>Micro:Bit Electronics Kit - example code and wiring</h1>
+  </header>
+
+  <div id="intro">
+    <p>Use this page to learn how to wire up, and program, your new components.</p>
+    <p>Once you know how they work, try adding them into another project! For example, expand <a href="https://www.instructables.com/id/Felt-Microbit-Name-Badge-Craft-Coding/" target="_blank">our micro:bit name badge project</a>.</p>
+    <h3>Click on a picture to jump to the component you want to try first!</h3>
+  </div>
+
+  <nav class="links">
+    <a href="#LED"><img src="images\LED.png" alt="LED wiring instructions" width="150px" height="auto"></a>
+    <a href="#RGB"><img src="images\RGB_LED.png" alt="RGB LED wiring instructions" width="150px" height="auto"></a>
+    <a href="#BUTTON"><img src="images\BUTTON.png" alt="Button wiring instructions" width="150px" height="auto"></a>
+    <a href="#SPEAKER"><img src="images\SPEAKER.png" alt="Speaker wiring instructions" width="150px" height="auto"></a>
+  </nav>
+
+  <div id="LED" class="left">
+    <h3>LED - wiring and example code</h3>
+    <img src="images\LED.png" alt="LED wiring instructions" width="180px" height="auto">
+    <img src="images\LED_wiring.JPG" alt="LED wiring photo" width="180px" height="auto">
+    <p>Take a crocodile clip, and connect one end of it to <strong>pin 0</strong> on your micro:bit.</p>
+    <p>Connect the other end of your crocodile clip to the <strong>positive</strong> lead of your LED (the longer one).</p>
+    <p>Connect a second crocodile clip between the <strong>GND pin</strong> on your micro:bit, and the <strong>negative</strong> lead of your LED (the shorter one).</p>
+    <p>Now try the below code... what happens to your LED?</p>
+    <pre><code>from microbit import *
+
+while True:
+    pin0.write_digital(1)
+    sleep(500)
+    pin0.write_digital(0)
+    sleep(500)</code></pre>
+    <ul>
+      <li>What would you need to change in the code if you connected the LED to <strong>pin 1 or 2</strong> instead of pin 0?</li>
+    </ul>
+    <nav class="links left bg_green">
+      <a href="#head">Back to top</a>
+    </nav>
+  </div>
+
+  <div id="RGB" class="left">
+    <h3>RGB LED - wiring and example code</h3>
+    <img src="images\RGB_LED.png" alt="RGB LED wiring instructions" width="auto" height="auto">
+    <p>Take a crocodile clip, and connect one end of it to <strong>pin 0</strong> on your micro:bit.</p>
+    <p>Connect the other end of your crocodile clip to one of the <strong>positive</strong> leads of your LED (the shorter ones).</p>
+    <p>Connect a second crocodile clip between the <strong>GND pin</strong> on your micro:bit, and the <strong>negative</strong> lead of your LED (the longest one).</p>
+    <p>Now try the below code... what happens to your LED?</p>
+    <pre><code>from microbit import *
+
+while True:
+    pin0.write_analog(1023)
+    sleep(500)
+    pin0.write_analog(0)
+    sleep(500)</code></pre>
+    <p>Now remove the crocodile clip from the <strong>positive</strong> lead you first chose, and connect it to a different <strong>positive</strong> lead instead.</p>
+    <p>The <strong>ground lead</strong> must always stay connected.</p>
+    <p>One of the leads is red, one green, and one blue!</p>
+    <ul>
+      <li>What happens if you change <code>pin0.write_analog(1023)</code> to <code>pin0.write_analog(300)</code>?</li>
+      <li>What would you need to change in the code if you connected the lead to <strong>pin 1 or 2</strong> instead of pin 0?</li>
+      <li>If you can, get two more crocodile clips. Can you wire up all three colours, and expand the code to control them all?</li>
+    </ul>
+    <nav class="links left bg_green">
+      <a href="#head">Back to top</a>
+    </nav>
+  </div>
+
+  <div id="BUTTON" class="left">
+    <h3>Button - wiring and example code</h3>
+    <img src="images\BUTTON.png" alt="Button wiring instructions" width="auto" height="auto">
+    <p>Take a crocodile clip, and connect one end of it to <strong>pin 0</strong> on your micro:bit.</p>
+    <p>Connect the other end of your crocodile clip to one of the leads of your button.</p>
+    <p>Connect a second crocodile clip between the <strong>GND pin</strong> on your micro:bit, and the other lead of your button.</p>
+    <p>Now try the below code... what happens when you press the new button?</p>
+    <pre><code>from microbit import *
+
+while True:
+    button = pin0.read_digital()
+    if button == 1:
+        display.show(Image.DUCK)
+    else:
+        display.clear()</code></pre>
+    <ul>
+      <li>What other <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/tutorials/images.html" target="_blank">images</a> can you show on the micro:bit?</li>
+      <li>What would you need to change in the code if you connected the button to <strong>pin 1 or 2</strong> instead of pin 0?</li>
+    </ul>
+    <nav class="links left bg_green">
+      <a href="#head">Back to top</a>
+    </nav>
+  </div>
+
+  <div id="SPEAKER" class="left">
+    <h3>Speaker - wiring and example code</h3>
+    <img src="images\SPEAKER.png" alt="Speaker wiring instructions" width="180px" height="auto">
+    <img src="images\SPEAKER_wiring.JPG" alt="Speaker wiring photo" width="180px" height="auto">
+    <p>Take a crocodile clip, and connect one end of it to <strong>pin 0</strong> on your micro:bit.</p>
+    <p>Connect the other end of your crocodile clip to one of the leads of your speaker.</p>
+    <p>Connect a second crocodile clip between the <strong>GND pin</strong> on your micro:bit, and the other lead of your speaker.</p>
+    <p>Now try the below code... what happens?</p>
+    <pre><code>from microbit import *
+import music
+
+music.play(music.ODE)</code></pre>
+    <ul>
+      <li>What other <a href="https://microbit-micropython.readthedocs.io/en/v1.0.1/tutorials/music.html" target="_blank">tunes</a> can you get the micro:bit to play?</li>
+    </ul>
+    <p>Now try the below code... what happens this time?</p>
+    <pre><code>from microbit import *
+import speech
+
+speech.say("hello humans")</code></pre>
+    <p>Unfortunately, speech and music cannot work at the same time.</p>
+    <ul>
+      <li>Change the code to say your name, or a funny phrase.</li>
+    </ul>
+    <nav class="links left bg_green">
+      <a href="#head">Back to top</a>
+    </nav>
+  </div>
+
+</body>
+
+</html>
